@@ -3,19 +3,19 @@ import Layout from '../../layouts/Layout.astro'
 
 const painPoints = [
   {
+    num: '01',
     title: 'Classified and sensitive information',
     desc: 'Government agencies handle data that cannot leave controlled environments under any circumstances. Cloud AI architectures are fundamentally incompatible with these requirements.',
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />`,
   },
   {
+    num: '02',
     title: 'Citizen data protection',
     desc: 'Public trust depends on protecting the personal information citizens share with their government. Cloud AI providers use data to improve their models -- that is unacceptable for public-sector data.',
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />`,
   },
   {
+    num: '03',
     title: 'FISMA and FedRAMP requirements',
     desc: 'Federal information security standards require demonstrable data governance, access controls, and audit capabilities that cloud AI platforms were not designed to provide.',
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />`,
   },
 ]
 
@@ -33,83 +33,94 @@ const useCases = [
     desc: 'Power cross-agency knowledge assistants on internal data. Improve response times, reduce manual lookup, and deliver consistent answers to constituent inquiries -- all from secure infrastructure.',
   },
 ]
+
+const airGapFeatures = [
+  { title: 'Complete network isolation', desc: 'Zero external connections. No cloud callbacks, no telemetry, no update checks. The system operates entirely within your security perimeter.' },
+  { title: 'On-site installation', desc: 'Deploy on your existing servers or receive a pre-configured SLM Appliance. Models and updates delivered through secure physical media when needed.' },
+  { title: 'Hardware-bound encryption', desc: 'Trusted Execution Environments ensure that models and data remain cryptographically locked to authorized hardware, even in air-gapped networks.' },
+  { title: 'Full audit capability', desc: 'Complete logging of model access, queries, and outputs within your environment. Ready for FISMA audits and agency-specific compliance reviews.' },
+]
 ---
 
 <Layout title="AI for Government" description="Sovereign AI for sovereign data. Air-gapped deployment available. Built for FISMA, FedRAMP, and government security standards.">
 
   <!-- ===== HERO ===== -->
-  <section class="hero-gradient relative overflow-hidden pt-32 pb-20 md:pt-44 md:pb-28">
-    <div class="absolute inset-0 opacity-[0.03]" aria-hidden="true">
-      <svg class="h-full w-full" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="hex-gov" width="56" height="100" patternUnits="userSpaceOnUse" patternTransform="scale(2)">
-            <path d="M28 66L0 50V18L28 2l28 16v32L28 66z" fill="none" stroke="currentColor" stroke-width="0.5" class="text-teal" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#hex-gov)" />
-      </svg>
+  <section class="relative min-h-[70svh] flex flex-col justify-end pb-16 md:justify-center md:pb-0 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-[10%] left-[5%] w-[50vw] h-[50vw] bg-radial-[at_50%_50%] from-gold/[0.015] to-transparent rounded-full"></div>
+      <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/10 to-transparent"></div>
     </div>
 
-    <div class="relative mx-auto max-w-7xl px-6">
-      <div class="max-w-3xl">
-        <div class="inline-flex items-center gap-2 rounded-full border border-navy-700 bg-navy-900/80 px-4 py-1.5 text-xs text-slate-400 mb-8">
-          <span class="h-1.5 w-1.5 rounded-full bg-teal animate-pulse"></span>
-          Government Solutions
+    <div class="relative mx-auto w-full max-w-[90rem] px-6 md:px-10 pt-32 md:pt-0">
+      <div class="mb-10 md:mb-14" data-reveal>
+        <a href="/solutions" class="font-mono text-[11px] text-text/50 tracking-[0.2em] uppercase hover:text-gold/60 transition-colors inline-flex items-center gap-2">
+          <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+          Solutions
+        </a>
+        <span class="font-mono text-[11px] text-text/20 tracking-[0.2em] uppercase mx-3">/</span>
+        <span class="font-mono text-[11px] text-gold/50 tracking-[0.3em] uppercase">Government</span>
+      </div>
+
+      <div class="grid md:grid-cols-12 gap-8 md:gap-6">
+        <div class="md:col-span-8">
+          <h1 class="font-display leading-[0.85] tracking-[-0.04em]" data-reveal data-reveal-delay="1">
+            <span class="block text-[clamp(3rem,9vw,8rem)] text-bright">Sovereign AI</span>
+            <span class="block text-[clamp(3rem,9vw,8rem)] text-bright">for sovereign</span>
+            <span class="block text-[clamp(3rem,9vw,8rem)] text-bright">data<span class="text-gold">.</span></span>
+          </h1>
         </div>
 
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.08]">
-          Sovereign AI for
-          <br />
-          <span class="text-gradient">sovereign data.</span>
-        </h1>
-
-        <p class="mt-6 text-lg md:text-xl text-slate-400 max-w-2xl leading-relaxed">
-          Deploy AI inside your agency's secure network. Process classified and sensitive information without any external data dependencies. Air-gapped deployment available. Built for the standards your environment demands.
-        </p>
-
-        <div class="mt-10 flex flex-wrap gap-4">
-          <a href="/contact" class="inline-flex items-center gap-2 rounded-lg bg-teal px-6 py-3 text-base font-semibold text-navy-950 transition-all duration-200 hover:bg-teal-dim hover:glow-teal">
-            Request a Government Demo
-            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-          </a>
-          <a href="/platform" class="inline-flex items-center gap-2 rounded-lg border border-navy-700 px-6 py-3 text-base font-medium text-slate-300 transition-all duration-200 hover:border-slate-600 hover:text-ice">
-            See the Platform
-          </a>
+        <div class="md:col-span-4 md:flex md:flex-col md:justify-end md:pb-4" data-reveal data-reveal-delay="2">
+          <p class="text-[15px] text-text leading-relaxed max-w-sm">
+            Deploy AI inside your agency's secure network. Process classified and sensitive information without any external data dependencies. Air-gapped deployment available. Built for the standards your environment demands.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row md:flex-col gap-3">
+            <a href="/contact" class="group inline-flex items-center justify-center gap-2.5 rounded bg-gold px-6 py-3 text-sm font-semibold text-black transition-all duration-200 hover:bg-gold-bright">
+              Request a Government Demo
+              <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </a>
+            <a href="/platform" class="inline-flex items-center justify-center gap-2 rounded border border-border px-6 py-3 text-sm font-medium text-text transition-all duration-200 hover:border-gold/30 hover:text-bright">
+              See the Platform
+            </a>
+          </div>
         </div>
+      </div>
 
-        <!-- Compliance badges -->
-        <div class="mt-12 flex flex-wrap gap-3">
-          {['FISMA Aligned', 'Air-Gap Ready', 'Zero External Dependencies', 'Full Audit Trails'].map(text => (
-            <span class="inline-flex items-center gap-2 rounded-full border border-navy-700 bg-navy-900/50 px-4 py-2 text-sm text-slate-300">
-              <svg class="h-3.5 w-3.5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              {text}
-            </span>
-          ))}
-        </div>
+      <!-- Compliance badges -->
+      <div class="mt-16 flex flex-wrap gap-6" data-reveal data-reveal-delay="3">
+        {['FISMA Aligned', 'Air-Gap Ready', 'Zero External Dependencies', 'Full Audit Trails'].map(text => (
+          <div class="flex items-center gap-3">
+            <div class="w-5 h-px bg-gold/30 shrink-0"></div>
+            <span class="font-mono text-[10px] text-text/60 tracking-[0.2em] uppercase">{text}</span>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
   <!-- ===== PAIN POINTS ===== -->
-  <section class="section-border py-20 md:py-28">
-    <div class="mx-auto max-w-7xl px-6">
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">The government AI challenge</h2>
-        <p class="mt-4 text-lg text-slate-400">
-          Cloud AI was built for Silicon Valley's risk profile, not yours. Government agencies need AI that operates within the security perimeter, not outside it.
-        </p>
+  <section class="relative border-y border-border py-28 md:py-40 overflow-hidden">
+    <div class="absolute inset-0 bg-radial-[at_70%_30%] from-danger/[0.015] to-transparent pointer-events-none"></div>
+
+    <div class="mx-auto max-w-[90rem] px-6 md:px-10">
+      <div class="grid md:grid-cols-12 gap-6 mb-20" data-reveal>
+        <div class="md:col-span-7">
+          <p class="font-mono text-[10px] text-danger/40 tracking-[0.3em] uppercase mb-6">The Challenge</p>
+          <h2 class="font-display text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05]">The government AI<br />challenge<span class="text-danger/40">.</span></h2>
+        </div>
+        <div class="md:col-span-5 md:flex md:items-end">
+          <p class="text-text text-[15px] leading-relaxed">
+            Cloud AI was built for Silicon Valley's risk profile, not yours. Government agencies need AI that operates within the security perimeter, not outside it.
+          </p>
+        </div>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
-        {painPoints.map(point => (
-          <div class="card-surface rounded-xl p-6">
-            <div class="h-10 w-10 rounded-lg bg-red/10 flex items-center justify-center mb-4">
-              <svg class="h-5 w-5 text-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <Fragment set:html={point.icon} />
-              </svg>
-            </div>
-            <h3 class="text-base font-semibold text-ice mb-2">{point.title}</h3>
-            <p class="text-sm text-slate-400 leading-relaxed">{point.desc}</p>
+      <div class="grid md:grid-cols-3 gap-x-16 lg:gap-x-24 gap-y-12">
+        {painPoints.map((point, i) => (
+          <div data-reveal data-reveal-delay={String(i + 1)}>
+            <span class="font-mono text-[11px] text-danger/25 tracking-[0.15em]">{point.num}</span>
+            <h3 class="font-display text-xl md:text-2xl text-bright mt-2 mb-3 tracking-tight">{point.title}</h3>
+            <p class="text-text text-sm leading-relaxed">{point.desc}</p>
           </div>
         ))}
       </div>
@@ -117,61 +128,72 @@ const useCases = [
   </section>
 
   <!-- ===== USE CASES ===== -->
-  <section class="section-border py-20 md:py-28">
-    <div class="mx-auto max-w-7xl px-6">
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">How government agencies use AskSLM</h2>
-        <p class="mt-4 text-lg text-slate-400">
-          AI that runs on your agency's own hardware -- no cloud, no external APIs, no data leaving your controlled environment.
-        </p>
+  <section class="py-28 md:py-40">
+    <div class="mx-auto max-w-[90rem] px-6 md:px-10">
+      <div class="grid md:grid-cols-12 gap-6 mb-20" data-reveal>
+        <div class="md:col-span-7">
+          <p class="font-mono text-[10px] text-gold/50 tracking-[0.3em] uppercase mb-6">Use Cases</p>
+          <h2 class="font-display text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05]">How government agencies use AskSLM<span class="text-gold">.</span></h2>
+        </div>
+        <div class="md:col-span-5 md:flex md:items-end">
+          <p class="text-text text-[15px] leading-relaxed">
+            AI that runs on your agency's own hardware -- no cloud, no external APIs, no data leaving your controlled environment.
+          </p>
+        </div>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
+      <div class="space-y-0">
         {useCases.map((uc, i) => (
-          <div class="card-surface rounded-xl p-8 transition-all duration-300 hover:border-navy-600">
-            <span class="text-3xl font-bold text-navy-700 font-mono">0{i + 1}</span>
-            <h3 class="mt-3 text-lg font-semibold text-ice mb-2">{uc.title}</h3>
-            <p class="text-sm text-slate-400 leading-relaxed">{uc.desc}</p>
+          <div class="border-t border-border py-10 md:py-12" data-reveal data-reveal-delay={String(i + 1)}>
+            <div class="grid md:grid-cols-12 gap-4 md:gap-8 items-start">
+              <span class="font-mono text-xs text-gold/40 md:col-span-1">0{i + 1}</span>
+              <h3 class="md:col-span-4 font-display text-2xl md:text-3xl text-bright tracking-tight">{uc.title}</h3>
+              <p class="md:col-span-7 text-text text-[15px] leading-relaxed">{uc.desc}</p>
+            </div>
+          </div>
+        ))}
+        <div class="border-t border-border"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AIR-GAPPED DEPLOYMENT ===== -->
+  <section class="border-t border-border py-28 md:py-40">
+    <div class="mx-auto max-w-[90rem] px-6 md:px-10">
+      <div class="grid md:grid-cols-12 gap-6 mb-20" data-reveal>
+        <div class="md:col-span-7">
+          <p class="font-mono text-[10px] text-gold/50 tracking-[0.3em] uppercase mb-6">Air-Gapped</p>
+          <h2 class="font-display text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05]">Air-gapped deployment<span class="text-gold">.</span></h2>
+        </div>
+        <div class="md:col-span-5 md:flex md:items-end">
+          <p class="text-text text-[15px] leading-relaxed">
+            For agencies with the strictest security requirements, AskSLM supports fully air-gapped deployment. The entire platform -- inference engine, models, and training tools -- runs without any network connectivity to the outside world.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-x-16 lg:gap-x-24 gap-y-12 md:gap-y-16">
+        {airGapFeatures.map((item, i) => (
+          <div data-reveal data-reveal-delay={String(i + 1)}>
+            <span class="font-mono text-[11px] text-gold/25 tracking-[0.15em]">0{i + 1}</span>
+            <h3 class="font-display text-xl md:text-2xl text-bright mt-2 mb-3 tracking-tight">{item.title}</h3>
+            <p class="text-text text-sm leading-relaxed">{item.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ===== AIR-GAPPED DEPLOYMENT ===== -->
-  <section class="section-border py-20 md:py-28">
-    <div class="mx-auto max-w-7xl px-6">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">Air-gapped deployment</h2>
-        <p class="text-base text-slate-400 leading-relaxed mb-8">
-          For agencies with the strictest security requirements, AskSLM supports fully air-gapped deployment. The entire platform -- inference engine, models, and training tools -- runs without any network connectivity to the outside world.
-        </p>
-        <div class="card-surface rounded-xl p-8 md:p-10">
-          <div class="grid sm:grid-cols-2 gap-6">
-            {[
-              { title: 'Complete network isolation', desc: 'Zero external connections. No cloud callbacks, no telemetry, no update checks. The system operates entirely within your security perimeter.' },
-              { title: 'On-site installation', desc: 'Deploy on your existing servers or receive a pre-configured SLM Appliance. Models and updates delivered through secure physical media when needed.' },
-              { title: 'Hardware-bound encryption', desc: 'Trusted Execution Environments ensure that models and data remain cryptographically locked to authorized hardware, even in air-gapped networks.' },
-              { title: 'Full audit capability', desc: 'Complete logging of model access, queries, and outputs within your environment. Ready for FISMA audits and agency-specific compliance reviews.' },
-            ].map(item => (
-              <div>
-                <h3 class="text-base font-semibold text-ice mb-2">{item.title}</h3>
-                <p class="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ===== SCENARIO ===== -->
-  <section class="section-border py-20 md:py-28">
-    <div class="mx-auto max-w-7xl px-6">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-8">What this looks like in practice</h2>
-        <div class="card-surface rounded-xl p-8 md:p-10">
-          <p class="text-sm text-slate-400 leading-relaxed mb-6">
+  <section class="py-28 md:py-40">
+    <div class="mx-auto max-w-[90rem] px-6 md:px-10">
+      <div class="grid md:grid-cols-12 gap-12">
+        <div class="md:col-span-5" data-reveal>
+          <p class="font-mono text-[10px] text-gold/50 tracking-[0.3em] uppercase mb-6">In Practice</p>
+          <h2 class="font-display text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05]">What this looks like<span class="text-gold">.</span></h2>
+        </div>
+        <div class="md:col-span-7" data-reveal data-reveal-delay="1">
+          <p class="text-text text-[15px] leading-relaxed mb-10">
             A government agency deploys AskSLM inside its secure data center to support caseworkers and analysts. Staff summarize case files, reports, and investigative documents. AI highlights policy conflicts and procedural gaps. Every interaction happens through encrypted, internal endpoints -- and no citizen data ever leaves the agency's controlled environment.
           </p>
           <div class="grid sm:grid-cols-2 gap-4">
@@ -181,9 +203,9 @@ const useCases = [
               'Staff interact through encrypted internal endpoints',
               'No citizen data leaves the controlled environment',
             ].map(outcome => (
-              <div class="flex items-start gap-2">
-                <svg class="h-4 w-4 text-teal shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                <span class="text-sm text-slate-300">{outcome}</span>
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-px bg-gold/40 mt-[11px] shrink-0"></div>
+                <p class="text-text text-sm leading-relaxed">{outcome}</p>
               </div>
             ))}
           </div>
@@ -193,32 +215,43 @@ const useCases = [
   </section>
 
   <!-- ===== CTA ===== -->
-  <section class="relative py-20 md:py-28 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-900 to-navy-950"></div>
-    <div class="absolute inset-0 opacity-[0.04]" aria-hidden="true">
-      <svg class="h-full w-full" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="hex-gov-cta" width="56" height="100" patternUnits="userSpaceOnUse" patternTransform="scale(1.5)">
-            <path d="M28 66L0 50V18L28 2l28 16v32L28 66z" fill="none" stroke="currentColor" stroke-width="0.5" class="text-teal" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#hex-gov-cta)" />
-      </svg>
+  <section class="relative py-36 md:py-48 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-radial-[at_50%_50%] from-gold/[0.025] to-transparent rounded-full"></div>
     </div>
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/10 to-transparent"></div>
 
-    <div class="relative mx-auto max-w-3xl px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">AI that meets your security posture, not Silicon Valley's</h2>
-      <p class="mt-6 text-lg text-slate-400 max-w-xl mx-auto">
+    <div class="relative mx-auto max-w-2xl px-6 text-center" data-reveal>
+      <p class="font-mono text-[10px] text-gold/50 tracking-[0.3em] uppercase mb-10">Get Started</p>
+      <h2 class="font-display text-5xl md:text-6xl tracking-[-0.03em] leading-[0.95]">
+        AI that meets your<br />security posture<span class="text-gold">.</span>
+      </h2>
+      <p class="mt-10 text-text text-lg max-w-md mx-auto leading-relaxed">
         See AskSLM deployed in a government-grade environment with your agency's security requirements and compliance frameworks.
       </p>
       <div class="mt-10 flex flex-wrap justify-center gap-4">
-        <a href="/contact" class="inline-flex items-center gap-2 rounded-lg bg-teal px-8 py-3.5 text-base font-semibold text-navy-950 transition-all duration-200 hover:bg-teal-dim hover:glow-teal-strong">
+        <a href="/contact" class="group inline-flex items-center gap-2.5 rounded bg-gold px-8 py-3.5 text-sm font-semibold text-black transition-all duration-200 hover:bg-gold-bright hover:glow-gold-strong">
           Request a Government Demo
-          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
         </a>
       </div>
-      <p class="mt-6 text-sm text-slate-600">No commitment. No data shared. 30-minute call.</p>
+      <p class="mt-10 text-xs text-muted">No commitment. No data shared. 30-minute call.</p>
     </div>
   </section>
 
 </Layout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+  );
+  document.querySelectorAll('[data-reveal]').forEach((el) => observer.observe(el));
+</script>

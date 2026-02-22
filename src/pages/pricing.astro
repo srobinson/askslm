@@ -5,57 +5,55 @@ import Layout from '../layouts/Layout.astro'
 <Layout title="Pricing" description="Transparent pricing for secure, on-premise AI. Choose the plan that fits your organization -- from small teams to large enterprises with complex compliance needs.">
 
   <!-- ===== HERO ===== -->
-  <section class="hero-gradient relative overflow-hidden pt-32 pb-20 md:pt-44 md:pb-28">
-    <div class="absolute inset-0 opacity-[0.03]" aria-hidden="true">
-      <svg class="h-full w-full" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="hex-pricing" width="56" height="100" patternUnits="userSpaceOnUse" patternTransform="scale(2)">
-            <path d="M28 66L0 50V18L28 2l28 16v32L28 66z" fill="none" stroke="currentColor" stroke-width="0.5" class="text-teal" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#hex-pricing)" />
-      </svg>
+  <section class="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-[10%] left-[15%] w-[40vw] h-[40vw] bg-radial-[at_50%_50%] from-gold/[0.015] to-transparent rounded-full"></div>
+      <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/10 to-transparent"></div>
     </div>
 
-    <div class="relative mx-auto max-w-7xl px-6 text-center">
-      <div class="inline-flex items-center gap-2 rounded-full border border-navy-700 bg-navy-900/80 px-4 py-1.5 text-xs text-slate-400 mb-8">
-        <span class="h-1.5 w-1.5 rounded-full bg-teal animate-pulse"></span>
+    <div class="relative mx-auto max-w-[90rem] px-6 md:px-10">
+      <p class="font-mono text-[10px] text-gold/50 tracking-[0.3em] uppercase mb-10" data-reveal>
         Pricing
-      </div>
-
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.08]">
-        Transparent pricing
-        <br />
-        <span class="text-gradient">for secure AI.</span>
-      </h1>
-
-      <p class="mt-6 text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-        Predictable costs. No per-token fees. No cloud metering. Choose the plan that fits your organization and deploy AI on your terms.
       </p>
+
+      <div class="grid md:grid-cols-12 gap-8 md:gap-6">
+        <div class="md:col-span-8">
+          <h1 class="font-display tracking-[-0.04em] leading-[0.9]" data-reveal data-reveal-delay="1">
+            <span class="block text-[clamp(3rem,8vw,7rem)] text-bright">Transparent pricing</span>
+            <span class="block text-[clamp(3rem,8vw,7rem)] text-bright/25">for secure AI<span class="text-gold">.</span></span>
+          </h1>
+        </div>
+
+        <div class="md:col-span-4 md:flex md:flex-col md:justify-end md:pb-4" data-reveal data-reveal-delay="2">
+          <p class="text-[15px] text-text leading-relaxed max-w-sm">
+            Predictable costs. No per-token fees. No cloud metering. Choose the plan that fits your organization and deploy AI on your terms.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ===== PRICING CARDS ===== -->
-  <section class="py-20 md:py-28 -mt-8">
-    <div class="mx-auto max-w-7xl px-6">
-      <div class="grid md:grid-cols-3 gap-8">
+  <!-- ===== PRICING TIERS ===== -->
+  <section class="border-t border-border">
+    <div class="mx-auto max-w-[90rem] px-6 md:px-10">
+      <div class="grid md:grid-cols-3">
 
         <!-- Starter -->
-        <div class="card-surface rounded-2xl p-8 flex flex-col transition-all duration-300 hover:border-navy-600">
-          <div class="mb-8">
-            <h2 class="text-xl font-semibold text-ice">Starter</h2>
-            <p class="text-sm text-slate-400 mt-2">For small teams evaluating on-premise AI.</p>
+        <div class="border-b md:border-b-0 md:border-r border-border py-12 md:py-16 md:pr-10 lg:pr-16" data-reveal>
+          <div class="mb-10">
+            <p class="font-mono text-[10px] text-muted tracking-[0.2em] uppercase mb-4">Starter</p>
+            <h2 class="font-display text-xl md:text-2xl text-bright tracking-tight">For small teams evaluating on-premise AI.</h2>
           </div>
 
-          <div class="mb-8">
-            <div class="flex items-baseline gap-1">
-              <span class="text-4xl font-bold text-ice">$2,500</span>
-              <span class="text-sm text-slate-400">/month</span>
+          <div class="mb-10">
+            <div class="flex items-baseline gap-1.5">
+              <span class="font-display text-[clamp(2.5rem,5vw,3.5rem)] leading-none text-bright">$2,500</span>
+              <span class="text-sm text-muted">/month</span>
             </div>
-            <p class="text-xs text-slate-600 mt-1">Billed annually. Month-to-month available.</p>
+            <p class="font-mono text-[10px] text-muted/60 tracking-[0.1em] mt-3">Billed annually. Month-to-month available.</p>
           </div>
 
-          <ul class="space-y-3 mb-8 flex-1">
+          <ul class="space-y-3.5 mb-10">
             {[
               'Up to 3 concurrent models',
               'Up to 25 users',
@@ -64,40 +62,40 @@ import Layout from '../layouts/Layout.astro'
               'Standard audit logging',
               'Quarterly software updates',
             ].map(item => (
-              <li class="flex items-start gap-2.5 text-sm text-slate-300">
-                <svg class="h-5 w-5 text-teal flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
+              <li class="flex items-start gap-3 text-sm text-text">
+                <div class="w-4 h-px bg-gold/40 mt-[11px] shrink-0"></div>
                 {item}
               </li>
             ))}
           </ul>
 
-          <a href="/contact" class="inline-flex items-center justify-center gap-2 rounded-lg border border-navy-700 px-6 py-3 text-base font-medium text-slate-300 transition-all duration-200 hover:border-slate-600 hover:text-ice">
+          <a href="/contact" class="inline-flex items-center justify-center gap-2 rounded border border-border px-6 py-3 text-sm font-medium text-text transition-all duration-200 hover:border-gold/30 hover:text-bright">
             Start a Trial
           </a>
         </div>
 
-        <!-- Business (Featured) -->
-        <div class="relative card-surface rounded-2xl p-8 flex flex-col border-teal/30 glow-teal transition-all duration-300">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2">
-            <span class="inline-flex items-center rounded-full bg-teal px-3 py-1 text-xs font-semibold text-navy-950">Most popular</span>
-          </div>
+        <!-- Business (Recommended) -->
+        <div class="relative border-b md:border-b-0 md:border-r border-border py-12 md:py-16 md:px-10 lg:px-16" data-reveal data-reveal-delay="1">
+          <div class="absolute top-0 left-0 right-0 h-px bg-gold md:h-auto md:w-px md:top-0 md:bottom-0 md:left-0 md:right-auto"></div>
+          <div class="absolute top-0 left-0 right-0 h-px bg-gold md:h-auto md:w-px md:top-0 md:bottom-0 md:left-auto md:right-0"></div>
 
-          <div class="mb-8">
-            <h2 class="text-xl font-semibold text-ice">Business</h2>
-            <p class="text-sm text-slate-400 mt-2">For mid-sized organizations deploying across departments.</p>
-          </div>
-
-          <div class="mb-8">
-            <div class="flex items-baseline gap-1">
-              <span class="text-4xl font-bold text-ice">$8,000</span>
-              <span class="text-sm text-slate-400">/month</span>
+          <div class="mb-10">
+            <div class="flex items-center gap-3 mb-4">
+              <p class="font-mono text-[10px] text-gold tracking-[0.2em] uppercase">Business</p>
+              <span class="font-mono text-[9px] text-gold/70 tracking-[0.15em] uppercase border border-gold/20 px-2 py-0.5">Recommended</span>
             </div>
-            <p class="text-xs text-slate-600 mt-1">Billed annually. Month-to-month available.</p>
+            <h2 class="font-display text-xl md:text-2xl text-bright tracking-tight">For mid-sized organizations deploying across departments.</h2>
           </div>
 
-          <ul class="space-y-3 mb-8 flex-1">
+          <div class="mb-10">
+            <div class="flex items-baseline gap-1.5">
+              <span class="font-display text-[clamp(2.5rem,5vw,3.5rem)] leading-none text-bright">$8,000</span>
+              <span class="text-sm text-muted">/month</span>
+            </div>
+            <p class="font-mono text-[10px] text-muted/60 tracking-[0.1em] mt-3">Billed annually. Month-to-month available.</p>
+          </div>
+
+          <ul class="space-y-3.5 mb-10">
             {[
               'Up to 10 concurrent models',
               'Up to 200 users',
@@ -108,35 +106,34 @@ import Layout from '../layouts/Layout.astro'
               'Advanced audit logging',
               'Monthly software updates',
             ].map(item => (
-              <li class="flex items-start gap-2.5 text-sm text-slate-300">
-                <svg class="h-5 w-5 text-teal flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
+              <li class="flex items-start gap-3 text-sm text-text">
+                <div class="w-4 h-px bg-gold/40 mt-[11px] shrink-0"></div>
                 {item}
               </li>
             ))}
           </ul>
 
-          <a href="/contact" class="inline-flex items-center justify-center gap-2 rounded-lg bg-teal px-6 py-3 text-base font-semibold text-navy-950 transition-all duration-200 hover:bg-teal-dim hover:glow-teal">
+          <a href="/contact" class="group inline-flex items-center justify-center gap-2.5 rounded bg-gold px-6 py-3 text-sm font-semibold text-black transition-all duration-200 hover:bg-gold-bright">
             Request a Demo
+            <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
         </div>
 
         <!-- Enterprise -->
-        <div class="card-surface rounded-2xl p-8 flex flex-col transition-all duration-300 hover:border-navy-600">
-          <div class="mb-8">
-            <h2 class="text-xl font-semibold text-ice">Enterprise</h2>
-            <p class="text-sm text-slate-400 mt-2">For large organizations with complex compliance needs.</p>
+        <div class="py-12 md:py-16 md:pl-10 lg:pl-16" data-reveal data-reveal-delay="2">
+          <div class="mb-10">
+            <p class="font-mono text-[10px] text-muted tracking-[0.2em] uppercase mb-4">Enterprise</p>
+            <h2 class="font-display text-xl md:text-2xl text-bright tracking-tight">For large organizations with complex compliance needs.</h2>
           </div>
 
-          <div class="mb-8">
-            <div class="flex items-baseline gap-1">
-              <span class="text-4xl font-bold text-ice">Custom</span>
+          <div class="mb-10">
+            <div class="flex items-baseline gap-1.5">
+              <span class="font-display text-[clamp(2.5rem,5vw,3.5rem)] leading-none text-bright">Custom</span>
             </div>
-            <p class="text-xs text-slate-600 mt-1">Tailored to your deployment and compliance requirements.</p>
+            <p class="font-mono text-[10px] text-muted/60 tracking-[0.1em] mt-3">Tailored to your deployment and compliance requirements.</p>
           </div>
 
-          <ul class="space-y-3 mb-8 flex-1">
+          <ul class="space-y-3.5 mb-10">
             {[
               'Unlimited concurrent models',
               'Unlimited users',
@@ -149,16 +146,14 @@ import Layout from '../layouts/Layout.astro'
               'Air-gapped deployment available',
               'Continuous software updates',
             ].map(item => (
-              <li class="flex items-start gap-2.5 text-sm text-slate-300">
-                <svg class="h-5 w-5 text-teal flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
+              <li class="flex items-start gap-3 text-sm text-text">
+                <div class="w-4 h-px bg-gold/40 mt-[11px] shrink-0"></div>
                 {item}
               </li>
             ))}
           </ul>
 
-          <a href="/contact" class="inline-flex items-center justify-center gap-2 rounded-lg border border-navy-700 px-6 py-3 text-base font-medium text-slate-300 transition-all duration-200 hover:border-slate-600 hover:text-ice">
+          <a href="/contact" class="inline-flex items-center justify-center gap-2 rounded border border-border px-6 py-3 text-sm font-medium text-text transition-all duration-200 hover:border-gold/30 hover:text-bright">
             Contact Sales
           </a>
         </div>
@@ -168,125 +163,148 @@ import Layout from '../layouts/Layout.astro'
   </section>
 
   <!-- ===== ALL PLANS INCLUDE ===== -->
-  <section class="section-border py-12">
-    <div class="mx-auto max-w-7xl px-6">
-      <div class="card-surface rounded-2xl p-8">
-        <h3 class="text-center text-lg font-semibold text-ice mb-8">All plans include</h3>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {[
-            {
-              label: 'Zero cloud usage',
-              desc: 'Your data never leaves your infrastructure',
-              icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />`,
-            },
-            {
-              label: 'End-to-end encryption',
-              desc: 'At rest, in transit, hardware-bound',
-              icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />`,
-            },
-            {
-              label: 'Audit logging',
-              desc: 'Every interaction tracked and exportable',
-              icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />`,
-            },
-            {
-              label: 'Software updates',
-              desc: 'Ongoing improvements and security patches',
-              icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182" />`,
-            },
-          ].map(item => (
-            <div class="text-center">
-              <div class="h-10 w-10 rounded-lg bg-teal/10 flex items-center justify-center mx-auto mb-3">
-                <svg class="h-5 w-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <Fragment set:html={item.icon} />
-                </svg>
-              </div>
-              <p class="text-sm font-semibold text-ice">{item.label}</p>
-              <p class="text-xs text-slate-400 mt-1">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FAQ ===== -->
-  <section class="section-border py-20 md:py-28">
-    <div class="mx-auto max-w-3xl px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Frequently asked questions</h2>
-        <p class="mt-4 text-lg text-slate-400">Common questions about pricing, deployment, and getting started.</p>
+  <section class="border-t border-border py-20 md:py-28">
+    <div class="mx-auto max-w-[90rem] px-6 md:px-10">
+      <div class="mb-16" data-reveal>
+        <p class="font-mono text-[10px] text-gold/50 tracking-[0.3em] uppercase mb-6">Included</p>
+        <h2 class="font-display text-3xl md:text-4xl tracking-[-0.02em]">All plans include<span class="text-gold">.</span></h2>
       </div>
 
-      <div class="space-y-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-10">
         {[
           {
-            question: 'What hardware do I need to run AskSLM?',
-            answer: 'AskSLM runs on standard enterprise hardware -- modern servers, workstations, and high-performance machines running Mac, Linux, or Windows. No specialized GPU clusters are required. If you prefer a turnkey solution, our SLM Appliance ships pre-configured and ready to deploy. We evaluate your existing infrastructure during the assessment phase and recommend the optimal configuration.',
+            label: 'Zero cloud usage',
+            desc: 'Your data never leaves your infrastructure',
+            icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />`,
           },
           {
-            question: 'How does marketplace model pricing work?',
-            answer: 'Marketplace models are included in your plan tier up to the concurrent model limit. Domain-specific models from third-party vendors may carry an additional subscription or usage-based fee set by the vendor. All pricing is transparent and visible before deployment. There are no hidden per-token charges or usage-based surprises.',
+            label: 'End-to-end encryption',
+            desc: 'At rest, in transit, hardware-bound',
+            icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />`,
           },
           {
-            question: 'Is there an annual discount?',
-            answer: 'Yes. Annual billing provides a discount compared to month-to-month pricing. Enterprise plans are custom-quoted and typically structured as annual agreements. Contact our team for specific pricing based on your deployment requirements.',
+            label: 'Audit logging',
+            desc: 'Every interaction tracked and exportable',
+            icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />`,
           },
           {
-            question: 'What is the typical implementation timeline?',
-            answer: 'Most organizations are running AskSLM in production within 1-2 weeks. The process includes infrastructure assessment, deployment (on your hardware or via appliance), initial model configuration, and team onboarding. Enterprise deployments with custom training and compliance documentation may take 3-4 weeks. This is not a six-month infrastructure project.',
+            label: 'Software updates',
+            desc: 'Ongoing improvements and security patches',
+            icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182" />`,
           },
-          {
-            question: 'Do you offer proof-of-concept deployments?',
-            answer: 'Yes. We offer structured proof-of-concept engagements where you can evaluate AskSLM on your own hardware, with your own data, in your own environment. The POC is designed to answer two questions: does it meet your performance requirements, and does it satisfy your compliance team. Contact us to discuss scope and timeline.',
-          },
-        ].map((faq, index) => (
-          <details class="group card-surface rounded-xl transition-all duration-300 hover:border-navy-600" id={`faq-${index}`}>
-            <summary class="flex items-center justify-between cursor-pointer p-6 list-none [&::-webkit-details-marker]:hidden">
-              <h3 class="text-base font-semibold text-ice pr-4">{faq.question}</h3>
-              <svg class="h-5 w-5 text-slate-400 flex-shrink-0 transition-transform duration-300 group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.5v15m7.5-7.5h-15" />
+        ].map((item, i) => (
+          <div data-reveal data-reveal-delay={String(i + 1)}>
+            <div class="h-10 w-10 flex items-center justify-center mb-4">
+              <svg class="h-5 w-5 text-gold/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <Fragment set:html={item.icon} />
               </svg>
-            </summary>
-            <div class="px-6 pb-6">
-              <p class="text-sm text-slate-400 leading-relaxed">{faq.answer}</p>
             </div>
-          </details>
+            <p class="text-sm font-semibold text-bright mb-1">{item.label}</p>
+            <p class="text-xs text-muted leading-relaxed">{item.desc}</p>
+          </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ===== CTA ===== -->
-  <section class="relative py-20 md:py-28 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-900 to-navy-950"></div>
-    <div class="absolute inset-0 opacity-[0.04]" aria-hidden="true">
-      <svg class="h-full w-full" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="hex-pricing-cta" width="56" height="100" patternUnits="userSpaceOnUse" patternTransform="scale(1.5)">
-            <path d="M28 66L0 50V18L28 2l28 16v32L28 66z" fill="none" stroke="currentColor" stroke-width="0.5" class="text-teal" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#hex-pricing-cta)" />
-      </svg>
-    </div>
+  <!-- ===== FAQ ===== -->
+  <section class="border-t border-border py-28 md:py-40">
+    <div class="mx-auto max-w-[90rem] px-6 md:px-10">
+      <div class="grid md:grid-cols-12 gap-12 md:gap-16">
 
-    <div class="relative mx-auto max-w-3xl px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Need a custom quote?</h2>
-      <p class="mt-6 text-lg text-slate-400 max-w-xl mx-auto">
-        Every organization is different. Tell us about your infrastructure, compliance requirements, and deployment goals, and we'll build a pricing plan that fits.
+        <!-- Left: header -->
+        <div class="md:col-span-4" data-reveal>
+          <p class="font-mono text-[10px] text-gold/50 tracking-[0.3em] uppercase mb-6">FAQ</p>
+          <h2 class="font-display text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05]">Common questions<span class="text-gold">.</span></h2>
+          <p class="mt-6 text-text text-sm leading-relaxed max-w-sm">Common questions about pricing, deployment, and getting started.</p>
+        </div>
+
+        <!-- Right: accordion -->
+        <div class="md:col-span-8">
+          <div>
+            {[
+              {
+                question: 'What hardware do I need to run AskSLM?',
+                answer: 'AskSLM runs on standard enterprise hardware -- modern servers, workstations, and high-performance machines running Mac, Linux, or Windows. No specialized GPU clusters are required. If you prefer a turnkey solution, our SLM Appliance ships pre-configured and ready to deploy. We evaluate your existing infrastructure during the assessment phase and recommend the optimal configuration.',
+              },
+              {
+                question: 'How does marketplace model pricing work?',
+                answer: 'Marketplace models are included in your plan tier up to the concurrent model limit. Domain-specific models from third-party vendors may carry an additional subscription or usage-based fee set by the vendor. All pricing is transparent and visible before deployment. There are no hidden per-token charges or usage-based surprises.',
+              },
+              {
+                question: 'Is there an annual discount?',
+                answer: 'Yes. Annual billing provides a discount compared to month-to-month pricing. Enterprise plans are custom-quoted and typically structured as annual agreements. Contact our team for specific pricing based on your deployment requirements.',
+              },
+              {
+                question: 'What is the typical implementation timeline?',
+                answer: 'Most organizations are running AskSLM in production within 1-2 weeks. The process includes infrastructure assessment, deployment (on your hardware or via appliance), initial model configuration, and team onboarding. Enterprise deployments with custom training and compliance documentation may take 3-4 weeks. This is not a six-month infrastructure project.',
+              },
+              {
+                question: 'Do you offer proof-of-concept deployments?',
+                answer: 'Yes. We offer structured proof-of-concept engagements where you can evaluate AskSLM on your own hardware, with your own data, in your own environment. The POC is designed to answer two questions: does it meet your performance requirements, and does it satisfy your compliance team. Contact us to discuss scope and timeline.',
+              },
+            ].map((faq, index) => (
+              <details class="group border-t border-border" id={`faq-${index}`}>
+                <summary class="flex items-center justify-between cursor-pointer py-6 md:py-8 list-none [&::-webkit-details-marker]:hidden" data-reveal data-reveal-delay={String(index + 1)}>
+                  <h3 class="font-display text-lg md:text-xl text-bright pr-6 tracking-tight">{faq.question}</h3>
+                  <svg class="h-4 w-4 text-muted flex-shrink-0 transition-transform duration-300 group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.5v15m7.5-7.5h-15" />
+                  </svg>
+                </summary>
+                <div class="pb-8">
+                  <p class="text-sm text-text leading-relaxed max-w-2xl">{faq.answer}</p>
+                </div>
+              </details>
+            ))}
+            <div class="border-t border-border"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="relative py-36 md:py-48 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-radial-[at_50%_50%] from-gold/[0.025] to-transparent rounded-full"></div>
+    </div>
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/10 to-transparent"></div>
+
+    <div class="relative mx-auto max-w-2xl px-6 text-center" data-reveal>
+      <p class="font-mono text-[10px] text-gold/50 tracking-[0.3em] uppercase mb-10">Custom Quote</p>
+      <h2 class="font-display text-5xl md:text-6xl lg:text-7xl tracking-[-0.03em] leading-[0.95]">
+        Every organization<br />is different<span class="text-gold">.</span>
+      </h2>
+      <p class="mt-10 text-text text-lg max-w-md mx-auto leading-relaxed">
+        Tell us about your infrastructure, compliance requirements, and deployment goals, and we'll build a pricing plan that fits.
       </p>
       <div class="mt-10 flex flex-wrap justify-center gap-4">
-        <a href="/contact" class="inline-flex items-center gap-2 rounded-lg bg-teal px-8 py-3.5 text-base font-semibold text-navy-950 transition-all duration-200 hover:bg-teal-dim hover:glow-teal-strong">
+        <a href="/contact" class="group inline-flex items-center gap-2.5 rounded bg-gold px-8 py-3.5 text-sm font-semibold text-black transition-all duration-200 hover:bg-gold-bright">
           Get a Custom Quote
-          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
         </a>
-        <a href="/platform" class="inline-flex items-center gap-2 rounded-lg border border-navy-700 px-8 py-3.5 text-base font-medium text-slate-300 hover:border-slate-600 hover:text-ice transition-all duration-200">
+        <a href="/platform" class="inline-flex items-center gap-2 rounded border border-border px-8 py-3.5 text-sm font-medium text-text transition-all duration-200 hover:border-gold/30 hover:text-bright">
           Explore the Platform
         </a>
       </div>
-      <p class="mt-6 text-sm text-slate-600">Typical deployment costs 5-20x less than cloud AI API fees for equivalent workloads.</p>
+      <p class="mt-10 text-xs text-muted">Typical deployment costs 5-20x less than cloud AI API fees for equivalent workloads.</p>
     </div>
   </section>
 
 </Layout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+  );
+  document.querySelectorAll('[data-reveal]').forEach((el) => observer.observe(el));
+</script>
