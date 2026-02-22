@@ -1,0 +1,237 @@
+---
+import Layout from '../../layouts/Layout.astro'
+
+const painPoints = [
+  {
+    title: 'Patient data in the cloud',
+    desc: 'Every cloud AI call sends protected health information to infrastructure you do not own, creating HIPAA exposure your compliance team cannot sign off on.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />`,
+  },
+  {
+    title: 'AI hallucinations in clinical settings',
+    desc: 'General-purpose models trained on the entire internet mix sources, hallucinate references, and cannot trace their outputs to authoritative clinical literature.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />`,
+  },
+  {
+    title: 'No audit trail for AI decisions',
+    desc: 'Cloud AI providers disclaim responsibility for outputs. There is no logging, no traceability, and no way to reconstruct how an AI-assisted clinical decision was made.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />`,
+  },
+]
+
+const useCases = [
+  {
+    title: 'Patient history summarization',
+    desc: 'Summarize complex patient histories, lab results, and clinical notes before consultations. Clinicians get a comprehensive snapshot in seconds, not minutes of chart review.',
+  },
+  {
+    title: 'Diagnostic support',
+    desc: 'Flag potential issues, lab anomalies, and relevant differential diagnoses from peer-reviewed clinical guidelines. Domain-specific models trained on verified medical literature.',
+  },
+  {
+    title: 'Medical coding and billing',
+    desc: 'Automate ICD-10, CPT, and HCPCS coding workflows. Reduce coding errors, accelerate billing cycles, and free up clinical staff for patient care.',
+  },
+  {
+    title: 'Clinical decision support',
+    desc: 'Query AI models through secure, encrypted on-premise connections for evidence-based guidance. Every interaction is logged with full audit trails for compliance review.',
+  },
+]
+---
+
+<Layout title="AI for Healthcare" description="HIPAA-compliant AI that runs entirely on your hospital network. Patient data never leaves your infrastructure.">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero-gradient relative overflow-hidden pt-32 pb-20 md:pt-44 md:pb-28">
+    <div class="absolute inset-0 opacity-[0.03]" aria-hidden="true">
+      <svg class="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="hex-hc" width="56" height="100" patternUnits="userSpaceOnUse" patternTransform="scale(2)">
+            <path d="M28 66L0 50V18L28 2l28 16v32L28 66z" fill="none" stroke="currentColor" stroke-width="0.5" class="text-teal" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#hex-hc)" />
+      </svg>
+    </div>
+
+    <div class="relative mx-auto max-w-7xl px-6">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 rounded-full border border-navy-700 bg-navy-900/80 px-4 py-1.5 text-xs text-slate-400 mb-8">
+          <span class="h-1.5 w-1.5 rounded-full bg-teal animate-pulse"></span>
+          Healthcare Solutions
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.08]">
+          HIPAA-compliant AI that
+          <br />
+          <span class="text-gradient">never touches the cloud.</span>
+        </h1>
+
+        <p class="mt-6 text-lg md:text-xl text-slate-400 max-w-2xl leading-relaxed">
+          Summarize patient histories. Assist with diagnostic decisions. Automate coding and billing. All running on your hospital's own servers, with full audit trails and zero external data exposure.
+        </p>
+
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a href="/contact" class="inline-flex items-center gap-2 rounded-lg bg-teal px-6 py-3 text-base font-semibold text-navy-950 transition-all duration-200 hover:bg-teal-dim hover:glow-teal">
+            Request a Healthcare Demo
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
+          <a href="/platform" class="inline-flex items-center gap-2 rounded-lg border border-navy-700 px-6 py-3 text-base font-medium text-slate-300 transition-all duration-200 hover:border-slate-600 hover:text-ice">
+            See the Platform
+          </a>
+        </div>
+
+        <!-- Compliance badges -->
+        <div class="mt-12 flex flex-wrap gap-3">
+          {['HIPAA Compliant', 'HITECH Ready', 'Zero Cloud Usage', 'Full Audit Trails'].map(text => (
+            <span class="inline-flex items-center gap-2 rounded-full border border-navy-700 bg-navy-900/50 px-4 py-2 text-sm text-slate-300">
+              <svg class="h-3.5 w-3.5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              {text}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PAIN POINTS ===== -->
+  <section class="section-border py-20 md:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">The healthcare AI dilemma</h2>
+        <p class="mt-4 text-lg text-slate-400">
+          AI can transform clinical workflows. But cloud AI creates compliance exposure that healthcare organizations cannot accept.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        {painPoints.map(point => (
+          <div class="card-surface rounded-xl p-6">
+            <div class="h-10 w-10 rounded-lg bg-red/10 flex items-center justify-center mb-4">
+              <svg class="h-5 w-5 text-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <Fragment set:html={point.icon} />
+              </svg>
+            </div>
+            <h3 class="text-base font-semibold text-ice mb-2">{point.title}</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">{point.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== USE CASES ===== -->
+  <section class="section-border py-20 md:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">How healthcare organizations use AskSLM</h2>
+        <p class="mt-4 text-lg text-slate-400">
+          Domain-specific AI models trained on verified clinical literature, deployed entirely within your network.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-6">
+        {useCases.map((uc, i) => (
+          <div class="card-surface rounded-xl p-8 transition-all duration-300 hover:border-navy-600">
+            <div class="flex items-start gap-4">
+              <span class="text-3xl font-bold text-navy-700 font-mono shrink-0">0{i + 1}</span>
+              <div>
+                <h3 class="text-lg font-semibold text-ice mb-2">{uc.title}</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">{uc.desc}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SCENARIO ===== -->
+  <section class="section-border py-20 md:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-8">What this looks like in practice</h2>
+        <div class="card-surface rounded-xl p-8 md:p-10">
+          <p class="text-sm text-slate-400 leading-relaxed mb-6">
+            A healthcare provider integrates AskSLM into its hospital network. Clinicians use AI-powered tools to summarize patient histories before consultations, flag potential issues and lab anomalies, and securely query diagnostic models through encrypted on-premise connections -- all without sending a single byte of patient data outside their infrastructure.
+          </p>
+          <div class="grid sm:grid-cols-2 gap-4">
+            {[
+              'Summarizes patient histories before consultations',
+              'Flags potential issues and lab anomalies',
+              'Encrypted on-premise diagnostic queries',
+              'Full compliance with healthcare privacy laws',
+            ].map(outcome => (
+              <div class="flex items-start gap-2">
+                <svg class="h-4 w-4 text-teal shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-sm text-slate-300">{outcome}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMPLIANCE ===== -->
+  <section class="section-border py-20 md:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">Compliance is the architecture</h2>
+        <p class="text-base text-slate-400 leading-relaxed mb-8">
+          AskSLM was designed from day one for environments where data handling is not optional. Every design decision supports the compliance frameworks your organization operates under.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div class="card-surface rounded-xl p-6">
+            <h3 class="text-base font-semibold text-ice mb-2">HIPAA</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Protected health information never leaves your infrastructure. Hardware-bound encryption, role-based access controls, and complete audit trails for every AI interaction.
+            </p>
+          </div>
+          <div class="card-surface rounded-xl p-6">
+            <h3 class="text-base font-semibold text-ice mb-2">HITECH</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Full support for HITECH Act requirements including breach notification readiness, audit logging, and access controls aligned with meaningful use standards.
+            </p>
+          </div>
+        </div>
+        <p class="mt-6 text-sm text-slate-400">
+          <a href="/security" class="text-teal hover:text-teal-dim transition-colors inline-flex items-center gap-1">
+            See full security architecture
+            <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="relative py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-900 to-navy-950"></div>
+    <div class="absolute inset-0 opacity-[0.04]" aria-hidden="true">
+      <svg class="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="hex-hc-cta" width="56" height="100" patternUnits="userSpaceOnUse" patternTransform="scale(1.5)">
+            <path d="M28 66L0 50V18L28 2l28 16v32L28 66z" fill="none" stroke="currentColor" stroke-width="0.5" class="text-teal" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#hex-hc-cta)" />
+      </svg>
+    </div>
+
+    <div class="relative mx-auto max-w-3xl px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">See HIPAA-compliant AI in action</h2>
+      <p class="mt-6 text-lg text-slate-400 max-w-xl mx-auto">
+        We will walk you through a live deployment tailored to your hospital's infrastructure, compliance requirements, and clinical workflows.
+      </p>
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="inline-flex items-center gap-2 rounded-lg bg-teal px-8 py-3.5 text-base font-semibold text-navy-950 transition-all duration-200 hover:bg-teal-dim hover:glow-teal-strong">
+          Request a Healthcare Demo
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </a>
+      </div>
+      <p class="mt-6 text-sm text-slate-600">No commitment. No data shared. 30-minute call.</p>
+    </div>
+  </section>
+
+</Layout>

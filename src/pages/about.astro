@@ -1,0 +1,219 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const leadership = [
+  {
+    name: 'Clint House',
+    title: 'Co-Founder & CEO',
+    bio: 'Previously founded and sold an AI/virtual wellness tech company, bringing deep experience in building scalable architectures and high-velocity product teams. A veteran tech entrepreneur with 20+ years of experience and multiple exits, Clint has led and scaled ventures across healthcare and deep tech, consistently commercializing breakthrough technologies in highly regulated environments. Now focused on building the decentralized AI infrastructure platform for secure, private AI.',
+    image: '/images/clint.jpg',
+  },
+  {
+    name: 'Zurab Tutberidze',
+    title: 'Co-Founder & CTO',
+    bio: 'A world-class systems engineer and runtime architect with deep expertise in C++, model optimization, and high-performance computing. Over his 20+ year career, Zurab has built nation-scale secure systems and ultra-low-latency execution engines, leading engineering teams in mission-critical environments. At AskSLM he owns the full inference stack, driving firmware, runtime architecture, and hardware-software co-design to deliver faster, safer, more efficient enterprise-grade AI systems.',
+    image: '/images/zurab.jpg',
+  },
+]
+
+const engineers = [
+  {
+    name: 'Mariam Mekarishvili',
+    title: 'Fullstack Developer',
+    bio: 'Owns the consoles and workflows that make complex on-premise AI feel simple for enterprise users.',
+  },
+  {
+    name: 'Giorgi Levidze',
+    title: 'Research & PM',
+    bio: 'Turns vision and architecture into clear roadmaps, specs, and artifacts the whole team can execute on.',
+  },
+  {
+    name: 'George Goglodze',
+    title: 'DevOps Engineer',
+    bio: 'Keeps the inference stack fast, observable, and resilient across on-prem and appliance environments.',
+  },
+  {
+    name: 'Thomas Struntz',
+    title: 'C++ Engineer',
+    bio: 'Focused on low-level performance, concurrency, and memory optimization in the inference engine.',
+  },
+  {
+    name: 'Alejandro Barkasz',
+    title: 'C++ Engineer',
+    bio: 'Works on model execution pipelines, hardware integration, and cross-platform runtime stability.',
+  },
+  {
+    name: 'Saksham Adhikari',
+    title: 'ML Engineer',
+    bio: 'Responsible for training pipelines, model evaluation, and optimization of small language models.',
+  },
+]
+
+const facts = [
+  { label: 'Founded', value: 'Austin, TX' },
+  { label: 'Team', value: '8 people' },
+  { label: 'Core technology', value: 'Built in-house in C++' },
+  { label: 'Combined experience', value: '40+ years' },
+]
+---
+
+<Layout title="About" description="Meet the team behind AskSLM. 40+ years of combined experience in secure systems, healthcare technology, and high-performance computing.">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero-gradient relative overflow-hidden pt-32 pb-20 md:pt-44 md:pb-28">
+    <div class="absolute inset-0 opacity-[0.03]" aria-hidden="true">
+      <svg class="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="hex-about" width="56" height="100" patternUnits="userSpaceOnUse" patternTransform="scale(2)">
+            <path d="M28 66L0 50V18L28 2l28 16v32L28 66z" fill="none" stroke="currentColor" stroke-width="0.5" class="text-teal" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#hex-about)" />
+      </svg>
+    </div>
+
+    <div class="relative mx-auto max-w-7xl px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 rounded-full border border-navy-700 bg-navy-900/80 px-4 py-1.5 text-xs text-slate-400 mb-8">
+          <span class="h-1.5 w-1.5 rounded-full bg-teal animate-pulse"></span>
+          About AskSLM
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.08]">
+          The team behind
+          <span class="text-gradient"> AskSLM</span>
+        </h1>
+
+        <p class="mt-6 text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          A battle-tested founding team and a high-velocity engineering group focused on turning cutting-edge AI into secure, deployable systems.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMPANY STORY ===== -->
+  <section class="section-border py-20 md:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-8">Why AskSLM exists</h2>
+
+        <div class="space-y-6 text-base text-slate-400 leading-relaxed">
+          <p>
+            The AI industry built everything for Silicon Valley's risk profile. Cloud-first architectures, per-token pricing models, and terms of service that disclaim responsibility for outputs. For a SaaS startup, this works. For a hospital managing patient records, a law firm protecting privileged documents, or a government agency handling classified information, it is a non-starter.
+          </p>
+
+          <p>
+            AskSLM was founded on a simple observation: the industries that stand to benefit most from AI are the ones least able to adopt it. Not because the technology is not ready, but because the deployment model is wrong. Regulated enterprises need AI that runs on infrastructure they own, processes data that never leaves their perimeter, and produces outputs they can trace and audit.
+          </p>
+
+          <p>
+            We built AskSLM to close that gap. A production-grade inference engine written in C++. A secure marketplace of domain-specific models from trusted vendors. No-code training tools that let domain experts -- not ML engineers -- customize AI for their workflows. All of it running on standard hardware, entirely on-premise, with zero cloud dependencies. This is AI built for the way regulated industries actually work.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LEADERSHIP ===== -->
+  <section class="section-border py-20 md:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Leadership</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {leadership.map(person => (
+          <div class="card-surface rounded-xl p-8">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="h-16 w-16 rounded-full bg-navy-800 border border-navy-700 flex items-center justify-center text-xl font-bold text-teal shrink-0">
+                {person.name.split(' ').map(n => n[0]).join('')}
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-ice">{person.name}</h3>
+                <p class="text-sm text-teal">{person.title}</p>
+              </div>
+            </div>
+            <p class="text-sm text-slate-400 leading-relaxed">{person.bio}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ENGINEERING TEAM ===== -->
+  <section class="section-border py-20 md:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Engineering team</h2>
+        <p class="mt-4 text-lg text-slate-400">
+          The people building the inference engine, training pipelines, and deployment infrastructure.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        {engineers.map(person => (
+          <div class="card-surface rounded-xl p-6 transition-all duration-300 hover:border-navy-600">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="h-10 w-10 rounded-full bg-navy-800 border border-navy-700 flex items-center justify-center text-sm font-bold text-teal shrink-0">
+                {person.name.split(' ').map(n => n[0]).join('')}
+              </div>
+              <div>
+                <h3 class="text-base font-semibold text-ice">{person.name}</h3>
+                <p class="text-xs text-slate-400">{person.title}</p>
+              </div>
+            </div>
+            <p class="text-sm text-slate-400 leading-relaxed">{person.bio}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMPANY FACTS ===== -->
+  <section class="section-border py-20 md:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Company facts</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+        {facts.map(fact => (
+          <div class="card-surface rounded-xl p-6 text-center">
+            <p class="text-lg font-semibold text-teal mb-1">{fact.value}</p>
+            <p class="text-sm text-slate-400">{fact.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="relative py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-900 to-navy-950"></div>
+    <div class="absolute inset-0 opacity-[0.04]" aria-hidden="true">
+      <svg class="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="hex-about-cta" width="56" height="100" patternUnits="userSpaceOnUse" patternTransform="scale(1.5)">
+            <path d="M28 66L0 50V18L28 2l28 16v32L28 66z" fill="none" stroke="currentColor" stroke-width="0.5" class="text-teal" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#hex-about-cta)" />
+      </svg>
+    </div>
+
+    <div class="relative mx-auto max-w-3xl px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Ready to talk to our team?</h2>
+      <p class="mt-6 text-lg text-slate-400 max-w-xl mx-auto">
+        We will walk you through a live deployment tailored to your industry and compliance requirements.
+      </p>
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="inline-flex items-center gap-2 rounded-lg bg-teal px-8 py-3.5 text-base font-semibold text-navy-950 transition-all duration-200 hover:bg-teal-dim hover:glow-teal-strong">
+          Request a Demo
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </a>
+      </div>
+      <p class="mt-6 text-sm text-slate-600">No commitment. No data shared. 30-minute call.</p>
+    </div>
+  </section>
+
+</Layout>

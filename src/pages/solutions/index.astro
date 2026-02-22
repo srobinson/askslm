@@ -1,0 +1,164 @@
+---
+import Layout from '../../layouts/Layout.astro'
+
+const industries = [
+  {
+    title: 'Healthcare',
+    headline: 'HIPAA-compliant AI that never touches the cloud',
+    desc: 'Summarize patient histories, assist with diagnostic decisions, automate medical coding, and support clinical workflows -- all running on your hospital network with full audit trails and zero external data exposure.',
+    badge: 'HIPAA',
+    href: '/solutions/healthcare',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />`,
+  },
+  {
+    title: 'Legal',
+    headline: 'AI that respects attorney-client privilege',
+    desc: 'Review thousands of documents in hours. Research case precedents instantly. Draft with confidence. All on-premise, fully encrypted, and within your firm\'s walls -- with complete audit trails for every query.',
+    badge: 'Privilege',
+    href: '/solutions/legal',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0 0 12 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 0 1-2.031.352 5.988 5.988 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971Zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 0 1-2.031.352 5.989 5.989 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971Z" />`,
+  },
+  {
+    title: 'Financial Services',
+    headline: 'AI for banks that can\'t afford a data breach',
+    desc: 'Automate KYC/AML review, generate risk analyses, and power internal copilots for relationship managers -- all behind your firewall, with no third-party data exposure and fully predictable costs.',
+    badge: 'SOC 2',
+    href: '/solutions/financial-services',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z" />`,
+  },
+  {
+    title: 'Government',
+    headline: 'Sovereign AI for sovereign data',
+    desc: 'Process case files, interpret policies, and serve citizens with AI that runs inside your agency\'s secure network. Air-gapped deployment available. No external dependencies.',
+    badge: 'FISMA',
+    href: '/solutions/government',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z" />`,
+  },
+]
+---
+
+<Layout title="Solutions for Regulated Industries" description="Industry-specific AI solutions for healthcare, legal, financial services, and government. On-premise deployment with full compliance.">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero-gradient relative overflow-hidden pt-32 pb-20 md:pt-44 md:pb-28">
+    <div class="absolute inset-0 opacity-[0.03]" aria-hidden="true">
+      <svg class="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="hex-sol" width="56" height="100" patternUnits="userSpaceOnUse" patternTransform="scale(2)">
+            <path d="M28 66L0 50V18L28 2l28 16v32L28 66z" fill="none" stroke="currentColor" stroke-width="0.5" class="text-teal" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#hex-sol)" />
+      </svg>
+    </div>
+
+    <div class="relative mx-auto max-w-7xl px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 rounded-full border border-navy-700 bg-navy-900/80 px-4 py-1.5 text-xs text-slate-400 mb-8">
+          <span class="h-1.5 w-1.5 rounded-full bg-teal animate-pulse"></span>
+          Industry Solutions
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.08]">
+          AI solutions for
+          <span class="text-gradient"> regulated industries</span>
+        </h1>
+
+        <p class="mt-6 text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          Every industry has its own compliance requirements, its own data sensitivity rules, and its own workflows. AskSLM delivers AI that speaks your industry's language -- and respects its boundaries.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INTRO ===== -->
+  <section class="section-border py-16 md:py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Built for industries where AI compliance is mandatory</h2>
+        <p class="mt-4 text-base text-slate-400 leading-relaxed">
+          Most AI platforms build for developers first and bolt on compliance later. AskSLM was architected from the ground up for environments where data handling is not optional -- it is law. HIPAA, SOC 2, FISMA, attorney-client privilege. These are not checkboxes. They are the architecture.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INDUSTRY GRID ===== -->
+  <section class="pb-20 md:pb-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid sm:grid-cols-2 gap-6">
+        {industries.map(card => (
+          <a href={card.href} class="group card-surface rounded-xl p-8 transition-all duration-300 hover:border-teal/30 hover:glow-teal">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-3">
+                <div class="h-10 w-10 rounded-lg bg-teal/10 flex items-center justify-center group-hover:bg-teal/15 transition-colors">
+                  <svg class="h-5 w-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <Fragment set:html={card.icon} />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-ice">{card.title}</h3>
+              </div>
+              <span class="text-[10px] font-mono font-bold tracking-widest uppercase text-teal bg-teal/10 px-2.5 py-1 rounded">{card.badge}</span>
+            </div>
+            <p class="text-sm font-medium text-slate-300 mb-3">{card.headline}</p>
+            <p class="text-sm text-slate-400 leading-relaxed mb-6">{card.desc}</p>
+            <span class="text-sm font-medium text-teal inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+              Explore {card.title.toLowerCase()} solutions
+              <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CROSS-INDUSTRY FEATURES ===== -->
+  <section class="section-border py-20 md:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Every deployment includes</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { title: 'Zero cloud usage', desc: 'All processing happens on your infrastructure. No data leaves your perimeter. No exceptions.' },
+          { title: 'Full audit trails', desc: 'Every model interaction is logged. Complete traceability for compliance review and governance.' },
+          { title: 'Predictable costs', desc: 'No per-token pricing. No usage metering from third parties. Fixed, controllable costs you own.' },
+          { title: 'Production in days', desc: 'Deploy on your existing servers or our plug-and-play appliance. No ML engineering team required.' },
+        ].map(item => (
+          <div class="card-surface rounded-xl p-6">
+            <div class="h-10 w-10 rounded-lg bg-teal/10 flex items-center justify-center mb-4">
+              <svg class="h-5 w-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 class="text-base font-semibold text-ice mb-2">{item.title}</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="relative py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-900 to-navy-950"></div>
+    <div class="relative mx-auto max-w-3xl px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Ready to see AI built for your industry?</h2>
+      <p class="mt-6 text-lg text-slate-400 max-w-xl mx-auto">
+        We will walk you through a live deployment tailored to your compliance requirements, data environment, and use cases.
+      </p>
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="inline-flex items-center gap-2 rounded-lg bg-teal px-8 py-3.5 text-base font-semibold text-navy-950 transition-all duration-200 hover:bg-teal-dim hover:glow-teal-strong">
+          Request a Demo
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </a>
+        <a href="/security" class="inline-flex items-center gap-2 rounded-lg border border-navy-700 px-8 py-3.5 text-base font-medium text-slate-300 hover:border-slate-600 hover:text-ice transition-all duration-200">
+          Security Architecture
+        </a>
+      </div>
+      <p class="mt-6 text-sm text-slate-600">No commitment. No data shared. 30-minute call.</p>
+    </div>
+  </section>
+
+</Layout>

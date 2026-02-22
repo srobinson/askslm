@@ -1,0 +1,349 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="Private AI Infrastructure for Regulated Enterprises">
+
+  <!-- ===== HERO ===== -->
+  <section class="relative min-h-[100svh] flex flex-col justify-end pb-16 md:justify-center md:pb-0 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-[10%] left-[5%] w-[50vw] h-[50vw] bg-radial-[at_50%_50%] from-gold/[0.015] to-transparent rounded-full"></div>
+      <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/10 to-transparent"></div>
+    </div>
+
+    <div class="relative mx-auto w-full max-w-[90rem] px-6 md:px-10 pt-32 md:pt-0">
+      <p class="font-mono text-[11px] text-gold/50 tracking-[0.3em] uppercase mb-10 md:mb-14" data-reveal>
+        Private AI Infrastructure
+      </p>
+
+      <div class="grid md:grid-cols-12 gap-8 md:gap-6">
+        <!-- Left: Headline spans 8 cols -->
+        <div class="md:col-span-8">
+          <h1 class="font-display leading-[0.85] tracking-[-0.04em]" data-reveal data-reveal-delay="1">
+            <span class="block text-[clamp(3.5rem,11vw,10rem)] text-bright">Your data</span>
+            <span class="block text-[clamp(3.5rem,11vw,10rem)] text-bright/25 md:ml-[6vw]">never</span>
+            <span class="block text-[clamp(3.5rem,11vw,10rem)] text-bright">leaves<span class="text-gold">.</span></span>
+          </h1>
+        </div>
+
+        <!-- Right: Copy + CTAs float in remaining space -->
+        <div class="md:col-span-4 md:flex md:flex-col md:justify-end md:pb-4" data-reveal data-reveal-delay="2">
+          <p class="text-[15px] text-text leading-relaxed max-w-sm">
+            Run advanced language models on your own servers. No cloud dependencies. No data egress. No compromises.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row md:flex-col gap-3">
+            <a href="/contact" class="group inline-flex items-center justify-center gap-2.5 rounded bg-gold px-6 py-3 text-sm font-semibold text-black transition-all duration-200 hover:bg-gold-bright">
+              Request a Demo
+              <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </a>
+            <a href="/platform" class="inline-flex items-center justify-center gap-2 rounded border border-border px-6 py-3 text-sm font-medium text-text transition-all duration-200 hover:border-gold/30 hover:text-bright">
+              How It Works
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMPLIANCE TICKER ===== -->
+  <div class="border-y border-border py-4 overflow-hidden">
+    <div class="flex whitespace-nowrap" style="animation: ticker 35s linear infinite;">
+      {[...Array(2)].map(() => (
+        <div class="flex items-center shrink-0">
+          {['HIPAA Aligned', 'SOC 2', 'FISMA Aligned', 'ISO 27001', 'Zero Trust Architecture', 'GDPR Ready'].map(badge => (
+            <>
+              <span class="text-[11px] font-mono text-muted/50 tracking-[0.2em] uppercase px-8">{badge}</span>
+              <span class="h-1 w-1 rounded-full bg-gold/30 shrink-0"></span>
+            </>
+          ))}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- ===== STATS BAND ===== -->
+  <section class="py-20 md:py-28" data-reveal>
+    <div class="mx-auto max-w-[90rem] px-6 md:px-10">
+      <div class="grid grid-cols-3 gap-4">
+        {[
+          { value: '100', suffix: '%', label: 'On-Premise' },
+          { value: '0', suffix: ' bytes', label: 'To Cloud' },
+          { value: '5–20', suffix: '×', label: 'Cost Savings' },
+        ].map((stat, i) => (
+          <div class={`${i === 1 ? 'text-center' : i === 2 ? 'text-right' : ''}`} data-reveal-delay={String(i + 1)}>
+            <div class="font-display text-[clamp(2.5rem,6vw,5.5rem)] leading-none tracking-tight text-bright">
+              {stat.value}<span class="text-gold">{stat.suffix}</span>
+            </div>
+            <div class="text-[10px] font-mono text-muted tracking-[0.2em] uppercase mt-3">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== THE PROBLEM ===== -->
+  <section class="relative border-y border-border py-28 md:py-40 overflow-hidden">
+    <div class="absolute inset-0 bg-radial-[at_70%_30%] from-danger/[0.015] to-transparent pointer-events-none"></div>
+
+    <div class="mx-auto max-w-[90rem] px-6 md:px-10">
+      <!-- Header row -->
+      <div class="grid md:grid-cols-12 gap-6 mb-20" data-reveal>
+        <div class="md:col-span-7">
+          <p class="font-mono text-[10px] text-danger/40 tracking-[0.3em] uppercase mb-6">The Problem</p>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl tracking-[-0.02em] leading-[1.05]">Cloud AI has a<br />trust problem<span class="text-danger/40">.</span></h2>
+        </div>
+        <div class="md:col-span-5 md:flex md:items-end md:justify-end">
+          <p class="font-mono text-[10px] text-muted/40 tracking-[0.15em] uppercase">Classification: Critical</p>
+        </div>
+      </div>
+
+      <!-- 2×2 problem grid -->
+      <div class="grid md:grid-cols-2 gap-x-16 lg:gap-x-24 gap-y-12 md:gap-y-16 mb-24">
+        {[
+          { num: '01', title: 'Data Egress', desc: 'Every API call sends sensitive data to infrastructure you don\'t own and can\'t audit. Your patients\' records, your clients\' briefs — on someone else\'s servers.' },
+          { num: '02', title: 'Zero Accountability', desc: 'Providers explicitly disclaim responsibility for outputs. When AI-generated advice goes wrong, no one stands behind the answer.' },
+          { num: '03', title: 'Compliance Gaps', desc: 'HIPAA, FISMA, attorney-client privilege — cloud AI creates regulatory exposures that compound with every query.' },
+          { num: '04', title: 'Runaway Costs', desc: 'Per-token pricing scales linearly. What starts as an experiment becomes a line item that finance can\'t predict or control.' },
+        ].map((item, i) => (
+          <div data-reveal data-reveal-delay={String(i + 1)}>
+            <span class="font-mono text-[11px] text-danger/25 tracking-[0.15em]">{item.num}</span>
+            <h3 class="font-display text-xl md:text-2xl text-bright mt-2 mb-3 tracking-tight">{item.title}</h3>
+            <p class="text-text text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Resolution -->
+      <div class="border-t border-border pt-12" data-reveal>
+        <div class="grid md:grid-cols-12 gap-6 items-start">
+          <div class="md:col-span-5">
+            <h3 class="font-display text-2xl md:text-3xl text-gold tracking-tight">AskSLM solves all four<span class="text-gold/50">.</span></h3>
+          </div>
+          <div class="md:col-span-7">
+            <div class="grid sm:grid-cols-2 gap-4">
+              {[
+                'Your data stays on your hardware',
+                'Complete audit trail for every interaction',
+                'Compliance is the architecture itself',
+                'Fixed cost, unlimited usage',
+              ].map(point => (
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-px bg-gold/40 mt-[11px] shrink-0"></div>
+                  <p class="text-text text-sm leading-relaxed">{point}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MANIFESTO ===== -->
+  <section class="py-36 md:py-48">
+    <div class="mx-auto max-w-2xl px-6 text-center" data-reveal>
+      <div class="w-8 h-px bg-gold/30 mx-auto mb-12"></div>
+      <p class="font-display italic text-[clamp(1.3rem,2.8vw,2rem)] text-bright/70 leading-[1.7]">
+        We built AskSLM because regulated industries deserve AI that respects the rules they live by. Not AI bolted onto someone else's cloud. Not AI that treats your patient records, legal briefs, and financial data as training fodder.
+      </p>
+      <p class="font-display italic text-[clamp(1.3rem,2.8vw,2rem)] text-gold/90 leading-[1.7] mt-8">
+        AI that stays inside your four walls.
+      </p>
+      <div class="w-8 h-px bg-gold/30 mx-auto mt-12"></div>
+    </div>
+  </section>
+
+  <!-- ===== PLATFORM ===== -->
+  <section class="border-t border-border">
+    <div class="mx-auto max-w-[90rem] px-6 md:px-10">
+      <div class="py-16 md:py-20" data-reveal>
+        <p class="font-mono text-[10px] text-gold/50 tracking-[0.3em] uppercase mb-6">Platform</p>
+        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl tracking-[-0.02em]">Three capabilities<span class="text-gold">.</span></h2>
+      </div>
+
+      {[
+        {
+          num: '01',
+          title: 'Inference Engine',
+          desc: 'Run multiple AI models simultaneously on standard hardware. Built in C++ for maximum throughput. Real-time performance with zero network latency.',
+          detail: 'C++ Core · Multi-Model · Sub-100ms',
+          href: '/platform#engine',
+        },
+        {
+          num: '02',
+          title: 'Model Marketplace',
+          desc: 'Curated, domain-specific AI models from trusted vendors. Legal, clinical, compliance, financial — deployed through encrypted pipelines.',
+          detail: 'Encrypted Delivery · Domain-Specific · Vetted',
+          href: '/platform#marketplace',
+        },
+        {
+          num: '03',
+          title: 'One-Click Deployment',
+          desc: 'Deploy on your existing servers or our plug-and-play AI appliance. Production-ready in days, not months. No ML team required.',
+          detail: 'Your Hardware · Pre-Configured · Days Not Months',
+          href: '/platform#deployment',
+        },
+      ].map((item, i) => (
+        <a href={item.href} class="group relative block border-t border-border py-12 md:py-16 transition-colors duration-300 hover:bg-surface/30" data-reveal data-reveal-delay={String(i + 1)}>
+          <!-- Ghost number -->
+          <span class="absolute top-6 md:top-8 right-6 md:right-10 font-display text-[clamp(4rem,10vw,8rem)] leading-none text-bright/[0.02] select-none pointer-events-none group-hover:text-gold/[0.04] transition-colors duration-500" aria-hidden="true">{item.num}</span>
+
+          <div class="relative grid md:grid-cols-12 gap-4 md:gap-8 items-start">
+            <span class="font-mono text-xs text-gold/40 md:col-span-1">{item.num}</span>
+            <div class="md:col-span-4">
+              <h3 class="font-display text-2xl md:text-3xl text-bright tracking-tight group-hover:text-gold transition-colors duration-300">{item.title}</h3>
+              <p class="font-mono text-[10px] text-muted/60 tracking-[0.1em] mt-2 hidden md:block">{item.detail}</p>
+            </div>
+            <p class="text-text text-[15px] leading-relaxed md:col-span-6">{item.desc}</p>
+            <div class="md:col-span-1 hidden md:flex md:justify-end md:items-center">
+              <svg class="h-5 w-5 text-border group-hover:text-gold transition-all duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- ===== INDUSTRIES ===== -->
+  <section class="py-28 md:py-40 border-t border-border">
+    <div class="mx-auto max-w-[90rem] px-6 md:px-10">
+      <div class="grid md:grid-cols-12 gap-6 mb-20" data-reveal>
+        <div class="md:col-span-5">
+          <p class="font-mono text-[10px] text-gold/50 tracking-[0.3em] uppercase mb-6">Industries</p>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl tracking-[-0.02em] leading-[1.05]">Built for industries where compliance is&nbsp;law<span class="text-gold">.</span></h2>
+        </div>
+      </div>
+
+      <!-- Stacked horizontal strips -->
+      <div class="space-y-0">
+        {[
+          {
+            title: 'Healthcare',
+            badge: 'HIPAA',
+            desc: 'Patient summaries, diagnostic support, medical coding. PHI never leaves your network.',
+            href: '/solutions/healthcare',
+          },
+          {
+            title: 'Legal',
+            badge: 'PRIVILEGE',
+            desc: 'Document review, e-discovery, case research. Full attorney-client privilege protection.',
+            href: '/solutions/legal',
+          },
+          {
+            title: 'Financial Services',
+            badge: 'SOC 2',
+            desc: 'KYC/AML automation, risk analysis, compliance reporting. All data stays in your vault.',
+            href: '/solutions/financial-services',
+          },
+          {
+            title: 'Government',
+            badge: 'FISMA',
+            desc: 'Case processing, policy interpretation, citizen services. Air-gapped deployment available.',
+            href: '/solutions/government',
+          },
+        ].map((item, i) => (
+          <a href={item.href} class="group block border-t border-border py-8 md:py-10 transition-colors duration-300 hover:bg-surface/30" data-reveal data-reveal-delay={String(i + 1)}>
+            <div class="grid grid-cols-12 gap-4 items-center">
+              <h3 class="col-span-12 md:col-span-5 font-display text-3xl md:text-4xl lg:text-5xl text-bright tracking-tight group-hover:text-gold transition-colors duration-300">{item.title}</h3>
+              <span class="col-span-4 md:col-span-2 font-mono text-[9px] font-medium tracking-[0.2em] text-gold/35 border border-gold/10 px-2.5 py-1 w-fit group-hover:border-gold/25 transition-colors">{item.badge}</span>
+              <p class="col-span-8 md:col-span-4 text-text text-sm leading-relaxed">{item.desc}</p>
+              <div class="hidden md:flex md:col-span-1 justify-end">
+                <svg class="h-5 w-5 text-border group-hover:text-gold transition-all duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" /></svg>
+              </div>
+            </div>
+          </a>
+        ))}
+        <div class="border-t border-border"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section class="py-28 md:py-40">
+    <div class="mx-auto max-w-[90rem] px-6 md:px-10">
+      <div class="grid md:grid-cols-12 gap-12">
+        <!-- Left: header + timeline -->
+        <div class="md:col-span-7 lg:col-span-6">
+          <div class="mb-16" data-reveal>
+            <p class="font-mono text-[10px] text-gold/50 tracking-[0.3em] uppercase mb-6">Process</p>
+            <h2 class="font-display text-4xl md:text-5xl tracking-[-0.02em]">Evaluation to production<span class="text-gold">.</span></h2>
+          </div>
+
+          <div class="relative">
+            <!-- Vertical gold line -->
+            <div class="absolute left-[7px] top-2 bottom-2 w-px bg-gradient-to-b from-gold/20 via-gold/10 to-transparent"></div>
+
+            <div class="space-y-12">
+              {[
+                { step: '01', title: 'Assess', desc: 'We evaluate your infrastructure, security posture, and target use cases. No commitment required.' },
+                { step: '02', title: 'Deploy', desc: 'Install on your servers or ship a pre-configured AI appliance to your facility.' },
+                { step: '03', title: 'Customize', desc: 'Your domain experts fine-tune models with no-code tools. No ML team needed.' },
+                { step: '04', title: 'Scale', desc: 'Add models, users, and use cases as needed. Infrastructure costs stay fixed.' },
+              ].map((item, i) => (
+                <div class="relative pl-10" data-reveal data-reveal-delay={String(i + 1)}>
+                  <div class="absolute left-0 top-1.5 h-[15px] w-[15px] rounded-full border border-gold/25 bg-black flex items-center justify-center">
+                    <div class="h-[5px] w-[5px] rounded-full bg-gold/50"></div>
+                  </div>
+                  <span class="font-mono text-[10px] text-gold/40 tracking-[0.15em]">{item.step}</span>
+                  <h3 class="font-display text-xl text-bright mt-1 mb-2">{item.title}</h3>
+                  <p class="text-sm text-text leading-relaxed max-w-md">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: empty space (intentional asymmetry) -->
+        <div class="hidden md:flex md:col-span-5 lg:col-span-6 items-center justify-center">
+          <p class="font-display italic text-bright/[0.02] text-[clamp(3rem,8vw,7rem)] leading-[1.1] select-none pointer-events-none text-right" aria-hidden="true">
+            Weeks<span class="text-gold/[0.04]">,</span><br />not months<span class="text-gold/[0.04]">.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="relative py-36 md:py-48 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-radial-[at_50%_50%] from-gold/[0.025] to-transparent rounded-full"></div>
+    </div>
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/10 to-transparent"></div>
+
+    <div class="relative mx-auto max-w-2xl px-6 text-center" data-reveal>
+      <p class="font-mono text-[10px] text-gold/50 tracking-[0.3em] uppercase mb-10">Get Started</p>
+      <h2 class="font-display text-5xl md:text-6xl lg:text-7xl tracking-[-0.03em] leading-[0.95]">
+        See it<span class="text-gold">.</span><br />Contained<span class="text-gold">.</span>
+      </h2>
+      <p class="mt-10 text-text text-lg max-w-md mx-auto leading-relaxed">
+        A live deployment walkthrough, tailored to your industry and compliance requirements.
+      </p>
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="group inline-flex items-center gap-2.5 rounded bg-gold px-8 py-3.5 text-sm font-semibold text-black transition-all duration-200 hover:bg-gold-bright hover:glow-gold-strong">
+          Request a Demo
+          <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </a>
+        <a href="/security" class="inline-flex items-center gap-2 rounded border border-border px-8 py-3.5 text-sm font-medium text-text transition-all duration-200 hover:border-gold/30 hover:text-bright">
+          Security Architecture
+        </a>
+      </div>
+      <p class="mt-10 text-xs text-muted">30-minute call. No commitment. No data shared.</p>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+  );
+  document.querySelectorAll('[data-reveal]').forEach((el) => observer.observe(el));
+</script>
