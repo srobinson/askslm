@@ -108,26 +108,20 @@ import Layout from '../layouts/Layout.astro'
       </div>
 
       <!-- Resolution -->
-      <div class="relative rounded-lg border border-gold/15 bg-gold/[0.02] p-10 md:p-14" data-reveal>
-        <div class="grid md:grid-cols-12 gap-8 items-start">
-          <div class="md:col-span-4">
-            <h3 class="font-display text-2xl md:text-3xl text-gold tracking-tight">AskSLM resolves all four<span class="text-gold/50">.</span></h3>
-          </div>
-          <div class="md:col-span-8">
-            <div class="grid sm:grid-cols-2 gap-x-8 gap-y-5">
-              {[
-                'Your data stays on your hardware',
-                'Complete audit trail for every interaction',
-                'Compliance is the architecture itself',
-                'Fixed cost, unlimited usage',
-              ].map(point => (
-                <div class="flex items-start gap-3">
-                  <div class="w-1.5 h-1.5 rounded-full bg-gold/60 mt-2 shrink-0"></div>
-                  <p class="text-bright/80 text-[15px] leading-relaxed">{point}</p>
-                </div>
-              ))}
+      <div class="relative rounded-lg border border-gold/20 bg-gold/[0.03] p-10 md:p-16" data-reveal>
+        <h3 class="font-display text-3xl md:text-4xl text-gold tracking-tight mb-10">AskSLM resolves all four<span class="text-gold/50">.</span></h3>
+        <div class="grid sm:grid-cols-2 gap-x-10 gap-y-6">
+          {[
+            'Your data stays on your hardware',
+            'Complete audit trail for every interaction',
+            'Compliance is the architecture itself',
+            'Fixed cost, unlimited usage',
+          ].map(point => (
+            <div class="flex items-start gap-4">
+              <div class="w-2 h-2 rounded-full bg-gold mt-2.5 shrink-0"></div>
+              <p class="text-bright text-lg md:text-xl leading-relaxed">{point}</p>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
@@ -139,14 +133,12 @@ import Layout from '../layouts/Layout.astro'
   <section class="py-32 md:py-44">
     <div class="mx-auto max-w-3xl px-6 md:px-10" data-reveal>
       <div class="w-12 h-px bg-gold/30 mx-auto mb-14"></div>
-      <blockquote class="text-center">
-        <p class="font-display italic text-[clamp(1.25rem,2.5vw,1.85rem)] text-bright/60 leading-[1.8]">
-          We built AskSLM because regulated industries deserve AI that respects the rules they live by. Not AI bolted onto someone else's cloud. Not AI that treats your patient records, legal briefs, and financial data as training fodder.
-        </p>
-        <p class="font-display italic text-[clamp(1.25rem,2.5vw,1.85rem)] text-gold/80 leading-[1.8] mt-8">
-          AI that stays inside your four walls.
-        </p>
-      </blockquote>
+      <p class="text-center text-[clamp(1.25rem,2.5vw,1.85rem)] text-bright/80 leading-[1.8]">
+        We built AskSLM because regulated industries deserve AI that respects the rules they live by. Not AI bolted onto someone else's cloud. Not AI that treats your patient records, legal briefs, and financial data as training fodder.
+      </p>
+      <p class="text-center text-[clamp(1.25rem,2.5vw,1.85rem)] text-gold leading-[1.8] mt-8 font-semibold">
+        AI that stays inside your four walls.
+      </p>
       <div class="w-12 h-px bg-gold/30 mx-auto mt-14"></div>
     </div>
   </section>
